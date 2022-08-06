@@ -1,8 +1,9 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser'); 
 const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config();
 
+const PORT = 3000;
 const app = express();
 const connectionString = process.env.DB_STRING;
 app.set('view engine', 'ejs');
@@ -13,9 +14,9 @@ MongoClient.connect(connectionString)
         const db = client.db('STAR-WARS');
         const quotesCollection = db.collection('quotes')
 
-        app.use(bodyParser.urlencoded({ extended: true }));
+        app.use(bodyParser.urlencoded({ extended: true })); //use express.urlencoded. Dont need bodyParser
         app.use(express.static('public'));
-        app.use(bodyParser.json());
+        app.use(bodyParser.json());//use express.json()
         app.use('/public', express.static('public'));
 
         app.get('/', (req, res) => {
@@ -62,7 +63,7 @@ MongoClient.connect(connectionString)
         })
 
 
-        app.listen(3000, () => {
+        app.listen(process.env.PORT || PORT, () => {
             console.log('listening on port 3000')
         });
 
