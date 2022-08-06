@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CRUD</title>
+        <link href="/style/main.css" rel="stylesheet" type="text/css" >
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alef&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="flex-container">
+            <section class="flex-section">
+                <h1>May Node and Express be with you.</h1>
+                <form action="/quotes" method="POST">
+                    <input type="text" placeholder=" name" name="name">
+                    <input type="text" placeholder=" quote" name="quote">
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+            
+            <section class="flex-section">
+                <h2>Darth Vader invades!</h2>
+                <p>
+                    Replace first Yoda's quote with a quote written by Darth Vader.
+                </p>
+                <button id="update-button">Replace Yoda's quote</button>
+            </section>
+        </div>
+        <div class="flex-container column">
+            <section class="flex-section">
+                <h2>Remove Darth Vader!</h2>
+                <p>
+                    Delete one of Darth Vader's quotes. Does nothing if there are no more Vader quotes.
+                </p>
+                <button id="delete-button">Delete Vader's quote</button>
+            </section>
+            <h3 id="message"></h3>
+            <section class="flex-section">
+                <h2>Quotes</h2>
+    
+                <ul class="quotes">
+                    <!-- Loop through quotes -->
+                    <% for(var i = 0; i < quotes.length; i++) {%>
+                        <li class="quote">
+                            <span><%= quotes[i].name %></span>:
+                            <span><%= quotes[i].quote %></span>
+                        </li>
+                    <% } %>
+                </ul>
+            </section>
+            
+        </div>
+        <script src="/main.js"></script>
+    </body>
+</html>
+
