@@ -15,6 +15,7 @@ update.addEventListener('click', () => {
         if (res.ok) return res.json();
     }).then(response => {
         console.log(response);
+        location.reload()
     })
 })
 
