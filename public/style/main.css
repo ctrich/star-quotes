@@ -61,16 +61,32 @@ button:active {
     background-color: darkgray;
 }
 
-/*medium screens*/
-@media (max-width: 1336px) {
+/*mobile screens*/
+@media (max-width: 750px) {
     .flex-container {
         flex-direction: column;
+        width: 99%;
         background: linear-gradient(180deg, rgba(18,183,236,1) 0%, rgba(37,115,166,1) 33%, rgba(36,119,170,1) 42%, rgba(255,0,0,1) 63%);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        min-width: 250px;
+    }
+
+    form input {
+        width: 100%;
+        margin: 10px 0;
     }
 }
 
 /*mobile screens*/
-@media (max-width: 1065px) {
+/* @media (max-width: 1065px) {
     form {
         width: 100%;
     }
@@ -96,4 +112,4 @@ button:active {
     .flex-section {
         width: 95%;
     }
-}
+} */
